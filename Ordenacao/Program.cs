@@ -129,7 +129,7 @@ namespace Ordenacao
 
         static void GravarVetor(int[] vetor)
         {
-            using (StreamWriter Gravar = new StreamWriter("C:\\Users\\leonardo.miranda\\Desktop\\Analise Algoritmos\\Ordenacao\\Ordenacao\\numeros.txt", true))
+            using (StreamWriter Gravar = new StreamWriter("C:\\Users\\leonardo.miranda\\Desktop\\Analise Algoritmos\\algoritmos-ordenacao\\Ordenacao\\numeros.txt", true))
             {
                 for (int i = 0; i < vetor.Length; i++)
                 {
@@ -140,7 +140,7 @@ namespace Ordenacao
 
         static int[] LerNumeros(int quantidadeLinhas)
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\\Users\\leonardo.miranda\\Desktop\\Analise Algoritmos\\Ordenacao\\Ordenacao\\numeros.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\\Users\\leonardo.miranda\\Desktop\\Analise Algoritmos\\algoritmos-ordenacao\\Ordenacao\\numeros.txt");
             
             int[] vetor = new int[quantidadeLinhas];
             
