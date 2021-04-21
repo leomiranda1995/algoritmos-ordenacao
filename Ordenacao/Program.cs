@@ -11,15 +11,13 @@ namespace Ordenacao
         {
             //int[] vetor = GerarVetor(200000, 1, 1000000);
             //GravarVetor(vetor);
+            Console.Write("Vetor com quantos números? ");
+            int quantidadeNumerosVetor = int.Parse(Console.ReadLine());
 
-            int[] vetor = LerNumeros(30);
+            int[] vetor = LerNumeros(quantidadeNumerosVetor);
 
-            int[] vetorOriginal = new int[vetor.Length];
-
-            for (int i = 0; i < vetor.Length; i++)
-            {
-                vetorOriginal[i] = vetor[i];
-            }
+            int[] vetorDesordenado = new int[vetor.Length];
+            vetor.CopyTo(vetorDesordenado, 0);
 
             InsertionSort insertionSort = new InsertionSort();
             BubbleSort bubbleSort = new BubbleSort();
@@ -29,7 +27,10 @@ namespace Ordenacao
             int opcao;
             do
             {
-                //PrintaVetor(vetorOriginal);
+                Console.Clear();
+                Console.WriteLine($"Vetor com {quantidadeNumerosVetor} números.");
+                Console.WriteLine();
+                //PrintaVetor(vetorDesordenado);
 
                 if (insertionSort.Tempo.ToString() != "00:00:00")
                     Console.WriteLine($"1 - Insertion Sort - Tempo: {insertionSort.Tempo.TotalSeconds}");
@@ -58,7 +59,7 @@ namespace Ordenacao
                 Console.Write("Escolha uma opção: ");
                 opcao = int.Parse(Console.ReadLine());
 
-                //PrintaVetor(vetorOriginal);
+                //PrintaVetor(vetorDesordenado);
 
                 Console.Clear();
 
@@ -67,7 +68,7 @@ namespace Ordenacao
                     case 1:
                         insertionSort.Ordenar(vetor);
                         Console.WriteLine($"Tempo Insertion Sort: {insertionSort.Tempo.TotalSeconds}");
-                        //PrintaVetor(Vetor);
+                        //PrintaVetor(vetor);
                         break;
 
                     case 2:
